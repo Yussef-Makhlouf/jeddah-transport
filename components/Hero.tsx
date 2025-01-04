@@ -1,187 +1,151 @@
-// import Image from 'next/image'
-// import { Truck, Phone, Calendar, Shield, MapPin, Clock } from 'lucide-react'
-
-// export default function Hero() {
-//   return (
-//     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-//       {/* Background Image with Parallax Effect */}
-//       <div className="absolute inset-0 transform scale-105">
-//         <Image
-//           src="/hero-bg.jpg"
-//           alt="خدمات النقل والشحن"
-//           fill
-//           className="object-cover transform hover:scale-105 transition-transform duration-3000"
-//           priority
-//         />
-//         <div className="absolute inset-0 bg-gradient-to-r from-amber-900/90 via-orange-800/85 to-rose-900/90"></div>
-//       </div>
-
-//       <div className="container mx-auto px-4 relative z-10">
-//         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-//           {/* Hero Content */}
-//           <div className="text-white space-y-8">
-//             <h1 className="text-5xl lg:text-7xl font-bold leading-tight animate-fade-in">
-//               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-rose-200">
-//                 خدمات النقل المتكاملة
-//               </span>
-//             </h1>
-
-//             <p className="text-xl lg:text-2xl text-gray-200 leading-relaxed">
-//               نقدم حلول نقل احترافية وآمنة في جميع أنحاء المملكة والخليج العربي
-//             </p>
-
-//             <div className="flex flex-wrap gap-4">
-//               <button className="bg-gradient-to-r from-amber-500 to-rose-500 hover:from-amber-600 hover:to-rose-600 text-white px-8 py-4 rounded-xl text-lg font-bold transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl">
-//                 احجز خدمة النقل
-//               </button>
-//               <button className="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white px-8 py-4 rounded-xl text-lg font-bold transform hover:scale-105 transition-all duration-300 border border-white/30">
-//                 تواصل معنا
-//               </button>
-//             </div>
-//           </div>
-
-//           {/* Stats Grid */}
-//           <div className="grid grid-cols-2 gap-6">
-//             {[
-//               { icon: Truck, title: "أسطول كبير", value: "+500", suffix: "شاحنة" },
-//               { icon: MapPin, title: "تغطية واسعة", value: "+50", suffix: "مدينة" },
-//               { icon: Shield, title: "خبرة", value: "+15", suffix: "عام" },
-//               { icon: Clock, title: "خدمة", value: "24/7", suffix: "متواصلة" },
-//             ].map((stat, index) => (
-//               <div
-//                 key={index}
-//                 className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300 group"
-//               >
-//                 <stat.icon className="h-10 w-10 text-amber-300 mb-4 group-hover:scale-110 transition-transform duration-300" />
-//                 <div className="space-y-2">
-//                   <h3 className="text-white text-lg font-medium">{stat.title}</h3>
-//                   <p className="text-3xl font-bold text-amber-300">
-//                     {stat.value}
-//                     <span className="text-lg text-gray-300 mr-1">{stat.suffix}</span>
-//                   </p>
-//                 </div>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-
-//         {/* Features Bar */}
-//         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
-//           {[
-//             { icon: Truck, text: "شحن سريع وآمن" },
-//             { icon: Phone, text: "دعم فني متواصل" },
-//             { icon: Calendar, text: "حجز مرن وسهل" },
-//           ].map((feature, index) => (
-//             <div
-//               key={index}
-//               className="flex items-center gap-4 bg-white/10 backdrop-blur-md px-6 py-4 rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300"
-//             >
-//               <feature.icon className="h-8 w-8 text-amber-300" />
-//               <span className="text-white text-lg font-medium">{feature.text}</span>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   )
-// }
-import Image from 'next/image'
-import { Truck, Phone, Calendar, Shield, MapPin, Clock, ArrowRight } from 'lucide-react'
+'use client'
+import {  ArrowRight } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Dynamic Background Elements */}
+    <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden py-24">
       <div className="absolute inset-0">
-        <Image
-          src="/hero-bg.jpg"
-          alt="خدمات النقل والشحن"
-          fill
-          className="object-cover transform scale-105"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-amber-900/95 via-orange-800/90 to-rose-900/95"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-white via-[#f0f9ff] to-[#e6fffa]"></div>
+        <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
         
-        {/* Animated Shapes */}
-        <div className="absolute top-20 right-20 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-rose-500/20 rounded-full blur-3xl animate-pulse-slower"></div>
-      </div>
-
-      {/* Geometric Patterns */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 right-1/4 w-24 h-24 border-4 border-amber-300/30 rounded-xl transform rotate-45 animate-float"></div>
-        <div className="absolute bottom-1/3 left-1/3 w-32 h-32 border-4 border-rose-300/30 rounded-full animate-float-delay"></div>
-        <div className="absolute top-1/2 right-1/2 w-20 h-20 border-4 border-orange-300/30 transform -rotate-12 animate-float-long"></div>
+        {/* Enhanced Animated Blobs */}
+        <motion.div 
+          initial={{ scale: 0.8 }}
+          animate={{ scale: [0.8, 1.2, 0.8], rotate: [0, 90, 0] }}
+          transition={{ duration: 20, repeat: Infinity }}
+          className="absolute top-20 right-20 w-96 h-96 bg-[#00B272]/10 rounded-full blur-3xl"
+        />
+        <motion.div 
+          initial={{ scale: 1 }}
+          animate={{ scale: [1, 1.5, 1], rotate: [0, -90, 0] }}
+          transition={{ duration: 15, repeat: Infinity }}
+          className="absolute bottom-20 left-20 w-96 h-96 bg-[#00A4D6]/10 rounded-full blur-3xl"
+        />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Hero Content */}
-          <div className="space-y-8">
-            <h1 className="text-6xl lg:text-7xl font-bold leading-tight animate-fade-in">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-rose-200">
-                خدمات النقل المتكاملة
-              </span>
+          {/* Enhanced Content Section */}
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="space-y-8"
+          >
+            <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/80 backdrop-blur-md rounded-full border border-[#00A4D6]/20 shadow-lg">
+              <span className="text-[#00B272] font-bold">✨ نبتكر المستقبل الرقمي</span>
+            </div>
+            
+            <h1 className="text-6xl lg:text-7xl font-bold leading-tight">
+              <motion.span 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="block text-[#003466] mb-4"
+              >
+                نطور
+              </motion.span>
+              <motion.span 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="block text-[#89C100] mb-4"
+              >
+                مستقبلك
+              </motion.span>
+              <motion.span 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+                className="relative text-[#00B272]"
+              >
+                الرقمي
+                <span className="absolute -bottom-2 left-0 right-0 h-2 bg-[#00A4D6] opacity-20 blur-sm"></span>
+              </motion.span>
             </h1>
 
-            <p className="text-xl lg:text-2xl text-gray-200 leading-relaxed">
-              نقدم حلول نقل احترافية وآمنة في جميع أنحاء المملكة والخليج العربي
-            </p>
+            <motion.p 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.8 }}
+              className="text-2xl text-gray-600 leading-relaxed"
+            >
+              نقدم <span className="text-[#00A4D6] font-bold">حلول برمجية</span> مبتكرة تساعد شركتك على 
+              <span className="text-[#89C100] font-bold"> النمو</span> في العصر الرقمي
+            </motion.p>
 
-            <div className="flex flex-wrap gap-6">
-              <button className="group bg-gradient-to-r from-amber-500 to-rose-500 hover:from-amber-600 hover:to-rose-600 text-white px-8 py-4 rounded-xl text-lg font-bold transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl">
-                احجز خدمة النقل
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1 }}
+              className="flex flex-wrap gap-6"
+            >
+              <button className="group bg-gradient-to-r from-[#00B272] to-[#89C100] text-white px-8 py-4 rounded-xl text-lg font-bold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-[#00B272]/30">
+                ابدأ مشروعك
                 <ArrowRight className="inline-block mr-2 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="relative overflow-hidden bg-white/10 backdrop-blur-md hover:bg-white/20 text-white px-8 py-4 rounded-xl text-lg font-bold transform hover:scale-105 transition-all duration-300 border border-white/30">
-                <span className="relative z-10">تواصل معنا</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-amber-500/20 to-rose-500/20 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+              <button className="group relative overflow-hidden bg-white/80 backdrop-blur-md text-[#003466] px-8 py-4 rounded-xl text-lg font-bold hover:scale-105 transition-all duration-300 border border-[#00A4D6]/20 shadow-lg">
+                تعرف علينا
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-[#00A4D6]/10 to-transparent group-hover:translate-x-full transition-transform duration-1000"></span>
               </button>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          {/* Stats Grid with Glass Effect */}
-          <div className="grid grid-cols-2 gap-6">
-            {[
-              { icon: Truck, title: "أسطول كبير", value: "+500", suffix: "شاحنة" },
-              { icon: MapPin, title: "تغطية واسعة", value: "+50", suffix: "مدينة" },
-              { icon: Shield, title: "خبرة", value: "+15", suffix: "عام" },
-              { icon: Clock, title: "خدمة", value: "24/7", suffix: "متواصلة" },
-            ].map((stat, index) => (
-              <div
-                key={index}
-                className="group bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300"
-              >
-                <div className="bg-gradient-to-r from-amber-500 to-rose-500 w-16 h-16 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <stat.icon className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-white text-lg font-medium mb-2">{stat.title}</h3>
-                <p className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-rose-300">
-                  {stat.value}
-                  <span className="text-lg text-gray-300 mr-1">{stat.suffix}</span>
-                </p>
+          {/* Enhanced Interactive Code Section */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="relative hidden lg:block"
+          >
+            <div className="relative z-10 bg-white/90 backdrop-blur-md rounded-2xl p-8 border border-[#00A4D6]/20 shadow-xl">
+              <div className="flex items-center gap-2 mb-6 border-b border-[#00A4D6]/10 pb-4">
+                <div className="w-3 h-3 rounded-full bg-[#00B272]"></div>
+                <div className="w-3 h-3 rounded-full bg-[#89C100]"></div>
+                <div className="w-3 h-3 rounded-full bg-[#00A4D6]"></div>
+                <span className="ml-4 text-[#00B272] font-mono">innovation.tsx</span>
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Features Bar with Glass Effect */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[
-            { icon: Truck, text: "شحن سريع وآمن" },
-            { icon: Phone, text: "دعم فني متواصل" },
-            { icon: Calendar, text: "حجز مرن وسهل" },
-          ].map((feature, index) => (
-            <div
-              key={index}
-              className="group bg-white/10 backdrop-blur-md px-6 py-4 rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 flex items-center gap-4"
-            >
-              <div className="bg-gradient-to-r from-amber-500 to-rose-500 p-3 rounded-xl group-hover:scale-110 transition-transform duration-300">
-                <feature.icon className="h-6 w-6 text-white" />
+              
+              <div className="space-y-6 font-mono " >
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.2 }}
+                  dir='rtl'
+                >
+                  <span className="text-[#00B272]">import</span>{' '}
+                  <span className="text-[#00A4D6]">{'{ Innovation }'}</span>{' '}
+                  <span className="text-[#00B272]">from</span>{' '}
+                  <span className="text-[#89C100]">&apos;@future/tech&apos;</span>
+                </motion.div>
+                
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.4 }}
+                  className="space-y-2"
+                >
+                  <div>
+                    <span className="text-[#00A4D6]">async function</span>{' '}
+                    <span className="text-[#89C100]">buildFuture</span>() {'{'}
+                  </div>
+                  <div className="pl-4">
+                    <span className="text-[#00B272]">const solution = new Innovation()</span>
+                  </div>
+                  <div className="pl-4">
+                    <span className="text-[#00A4D6]">await</span>{' '}
+                    <span className="text-[#89C100]">solution.transform()</span>
+                  </div>
+                  <div>{'}'}</div>
+                </motion.div>
               </div>
-              <span className="text-white text-lg font-medium">{feature.text}</span>
             </div>
-          ))}
+
+            {/* Decorative Elements */}
+            <div className="absolute -top-10 right-10 w-20 h-20 border-4 border-[#00B272]/20 rounded-full animate-spin-slow"></div>
+            <div className="absolute -bottom-5 left-5 w-32 h-32 bg-gradient-to-r from-[#00A4D6]/10 to-[#89C100]/10 rounded-xl transform rotate-12 animate-pulse"></div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -9,6 +9,11 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+		animation: {
+			'bounce-slow': 'bounce 3s infinite',
+			'pulse-slow': 'pulse 4s infinite',
+			'pulse-slower': 'pulse 5s infinite',
+		  },
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
@@ -49,13 +54,15 @@ const config: Config = {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
-  			}
+  			},
+		
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		}
+		
   	}
   },
   plugins: [require("tailwindcss-animate")],

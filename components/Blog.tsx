@@ -1,193 +1,118 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { Calendar, ArrowLeft, Clock, User, ChevronLeft } from 'lucide-react'
+import { Phone, Mail, MapPin } from 'lucide-react';
+import Image from 'next/image';
+import { Terminal, Database, Cloud } from 'lucide-react'
+import Contact from './Contact';
 
 export default function Blog() {
-  const featuredPost = {
-    title: 'مستقبل النقل اللوجستي في المملكة العربية السعودية',
-    excerpt: 'استكشف التطورات التقنية والاستراتيجية في قطاع النقل السعودي ودوره في تحقيق رؤية 2030',
-    date: '١٥ مايو ٢٠٢٣',
-    readTime: '١٠ دقائق',
-    author: 'م. عبدالله الغامدي',
-    category: 'رؤية 2030',
-    image: '/images/future-logistics.jpg'
-  }
-
-  const posts = [
+  const contactMethods = [
     {
-      title: 'التقنيات الحديثة في إدارة الأساطيل',
-      excerpt: 'تعرف على أحدث التقنيات المستخدمة في إدارة وتتبع أساطيل النقل',
-      date: '١٠ مايو ٢٠٢٣',
-      readTime: '٥ دقائق',
-      author: 'م. سارة القحطاني',
-      category: 'تقنيات النقل',
-      image: '/images/fleet-tech.jpg'
+      icon: Phone,
+      title: 'رقم الهاتف',
+      detail: '+966-123-456-789',
+      description: 'للاتصال بنا على مدار الساعة',
     },
     {
-      title: 'أفضل ممارسات الشحن البحري',
-      excerpt: 'دليل شامل لأفضل ممارسات الشحن البحري وتجنب التحديات الشائعة',
-      date: '٥ مايو ٢٠٢٣',
-      readTime: '٨ دقائق',
-      author: 'م. فهد العتيبي',
-      category: 'الشحن البحري',
-      image: '/images/shipping-best-practices.jpg'
+      icon: Mail,
+      title: 'البريد الإلكتروني',
+      detail: 'info@domain.com',
+      description: 'لإرسال استفساراتكم عبر البريد الإلكتروني',
     },
     {
-      title: 'مستقبل النقل المستدام',
-      excerpt: 'نظرة على مستقبل النقل المستدام وتأثيره على البيئة',
-      date: '١ مايو ٢٠٢٣',
-      readTime: '٦ دقائق',
-      author: 'د. نورة السعيد',
-      category: 'الاستدامة',
-      image: '/images/sustainable-transport.jpg'
-    }
-  ]
+      icon: MapPin,
+      title: 'العنوان',
+      detail: '123 شارع الرياض، السعودية',
+      description: 'زيارتنا في مكتبنا الرئيسي',
+    },
+  ];
 
   return (
-    <section id="blog" className="py-24 bg-gradient-to-r from-amber-50 via-orange-50 to-rose-50">
-      <div className="container mx-auto px-4">
+    <section className="relative py-24 overflow-hidden">
+
+      {/* Background Shapes */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-0 left-0 w-72 h-72 bg-[#00A4D6] rounded-full filter blur-3xl opacity-30 animate-blob"></div>
+        <div className="absolute bottom-0 right-0 w-72 h-72 bg-[#00B272] rounded-full filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+        </div>
+        {/* Dynamic Background */}
+<div className="absolute inset-0">
+  <div className="absolute inset-0 bg-gradient-to-br from-white via-[#f0f9ff] to-[#e6fffa]"></div>
+  <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+  <div className="absolute top-20 right-20 w-96 h-96 bg-[#00B272]/10 rounded-full blur-3xl animate-pulse-slow"></div>
+  <div className="absolute bottom-20 left-20 w-96 h-96 bg-[#00A4D6]/10 rounded-full blur-3xl animate-pulse-slower"></div>
+</div>
+
+{/* Floating Tech Icons */}
+<div className="absolute inset-0 overflow-hidden">
+  {[Terminal, Database, Cloud].map((Icon, index) => (
+    <div key={index} 
+         className={`absolute animate-float-${index + 1} opacity-30`}
+         style={{
+           top: `${Math.random() * 100}%`,
+           left: `${Math.random() * 100}%`
+         }}>
+      <Icon size={40} className="text-[#89C100]" />
+    </div>
+  ))}
+</div>
+      {/* Wave SVG */}
+      <div className="absolute top-0 left-0 w-full">
+        <svg viewBox="0 0 1440 320" className="w-full h-auto">
+          <path
+            fill="#FFF7ED"
+            fillOpacity="0.5"
+            d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+          ></path>
+        </svg>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Logo */}
+        <div className="flex justify-center mb-12">
+          <Image
+            src="/logo (1).jpg"
+            alt="Company Logo"
+            width={150}
+            height={150}
+            className="animate-float rounded-full shadow-lg shadow-black/20"
+          />
+        </div>
+
         {/* Header */}
         <div className="text-center mb-20">
           <h2 className="text-6xl font-bold mb-6">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 via-orange-500 to-rose-500">
-              آخر المستجدات
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#003466] via-[#00B272] to-[#89C100]">
+              تواصل معنا
             </span>
           </h2>
-          <div className="w-32 h-2 bg-gradient-to-r from-amber-500 via-orange-500 to-rose-500 mx-auto rounded-full mb-8"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            اكتشف أحدث الأخبار والمقالات في عالم النقل والخدمات اللوجستية
+          <div className="w-32 h-2 bg-gradient-to-r from-[#003466] via-[#00B272] to-[#89C100] mx-auto rounded-full mb-8"></div>
+          <p className="text-xl text-[#003466] max-w-3xl mx-auto">
+            نسعد بالإجابة على استفساراتكم وتقديم المساعدة المطلوبة
           </p>
         </div>
 
-        {/* Featured Post */}
-        <div className="mb-16">
-          <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
-            <div className="grid lg:grid-cols-2 gap-8">
-              <div className="relative h-[400px] lg:h-full">
-                <Image
-                  src={featuredPost.image}
-                  alt={featuredPost.title}
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-amber-900/80 via-amber-900/50 to-transparent"></div>
-                <div className="absolute top-6 right-6">
-                  <span className="bg-white/90 backdrop-blur-sm text-amber-600 px-4 py-2 rounded-full font-medium">
-                    {featuredPost.category}
-                  </span>
-                </div>
-              </div>
-              <div className="p-8 lg:p-12">
-                <div className="flex items-center gap-4 mb-6 text-sm text-gray-600">
-                  <div className="flex items-center gap-2">
-                    <Calendar className="h-4 w-4" />
-                    <span>{featuredPost.date}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Clock className="h-4 w-4" />
-                    <span>{featuredPost.readTime}</span>
-                  </div>
-                </div>
-                <h3 className="text-3xl font-bold text-gray-800 mb-4 hover:text-amber-600 transition-colors">
-                  {featuredPost.title}
-                </h3>
-                <p className="text-gray-600 mb-6 text-lg">
-                  {featuredPost.excerpt}
-                </p>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="bg-gradient-to-r from-amber-500 to-rose-500 p-1 rounded-full">
-                      <div className="bg-white p-1 rounded-full">
-                        <User className="h-5 w-5 text-amber-600" />
-                      </div>
-                    </div>
-                    <span className="text-gray-700">{featuredPost.author}</span>
-                  </div>
-                  <Link 
-                    href="#" 
-                    className="flex items-center gap-2 text-amber-600 hover:text-amber-700 transition-colors font-medium"
-                  >
-                    اقرأ المزيد
-                    <ChevronLeft className="h-5 w-5" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Regular Posts Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map((post, index) => (
-            <div 
+        {/* Contact Methods */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          {contactMethods.map((method, index) => (
+            <div
               key={index}
-              className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
+              className="relative group bg-white/80 backdrop-blur-lg rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8"
             >
-              <div className="relative h-56">
-                <Image
-                  src={post.image}
-                  alt={post.title}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-amber-900/80 to-transparent"></div>
-                <div className="absolute top-4 right-4">
-                  <span className="bg-white/90 backdrop-blur-sm text-amber-600 px-3 py-1 rounded-full text-sm">
-                    {post.category}
-                  </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#00A4D6]/10 to-[#00B272]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative flex flex-col items-center text-center">
+                <div className="bg-gradient-to-r from-[#003466] to-[#00B272] p-4 rounded-full mb-6 transform group-hover:scale-110 transition-transform duration-300">
+                  <method.icon className="h-8 w-8 text-white" />
                 </div>
-              </div>
-              
-              <div className="p-6">
-                <div className="flex items-center gap-4 mb-4 text-sm text-gray-600">
-                  <div className="flex items-center gap-1">
-                    <Calendar className="h-4 w-4" />
-                    <span>{post.date}</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Clock className="h-4 w-4" />
-                    <span>{post.readTime}</span>
-                  </div>
-                </div>
-
-                <h3 className="text-xl font-bold mb-3 text-gray-800 hover:text-amber-600 transition-colors">
-                  {post.title}
-                </h3>
-                
-                <p className="text-gray-600 mb-4 line-clamp-2">
-                  {post.excerpt}
-                </p>
-
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <User className="h-5 w-5 text-amber-600" />
-                    <span className="text-gray-700">{post.author}</span>
-                  </div>
-                  
-                  <Link 
-                    href="#" 
-                    className="flex items-center gap-2 text-amber-600 hover:text-amber-700 transition-colors"
-                  >
-                    اقرأ المزيد
-                    <ChevronLeft className="h-4 w-4" />
-                  </Link>
-                </div>
+                <h3 className="text-2xl font-bold mb-3 text-[#003466]">{method.title}</h3>
+                <p className="text-lg font-medium text-[#003466] mb-2">{method.detail}</p>
+                <p className="text-[#003466]/80">{method.description}</p>
               </div>
             </div>
           ))}
         </div>
 
-        {/* View All Button */}
-        <div className="text-center mt-12">
-          <Link 
-            href="/blog"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-rose-500 text-white px-8 py-3 rounded-xl hover:shadow-lg transition-shadow duration-300"
-          >
-            جميع المقالات
-            <ArrowLeft className="h-5 w-5" />
-          </Link>
-        </div>
+        {/* Contact Form */}
+<Contact />
       </div>
     </section>
-  )
+  );
 }

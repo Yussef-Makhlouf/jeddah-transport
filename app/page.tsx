@@ -1,11 +1,20 @@
+'use client'
+import React from 'react'
 import AboutUs from "@/components/AboutUs"
 import Blog from "@/components/Blog"
 import Footer from "@/components/Footer"
 import Header from "@/components/Header"
 import Hero from "@/components/Hero"
-import SaudiCities from "@/components/SaudiCities"
+import HowWeHelp from "@/components/HowWeHelp"
+import IndustriesWeServe from "@/components/IndustriesWeServe"
+import Partners from "@/components/Partners"
+// import SaudiCities from "@/components/SaudiCities"
+import SaudiEgyptLogistics from "@/components/SaudiEgyptLogistics"
 import Services from "@/components/Services"
+import Stats from "@/components/Stats"
+import Testimonials from "@/components/Testimonials"
 import WhyChooseUs from "@/components/WhyChooseUs"
+import ServiceShowcase from "@/components/ServiceShowcase"
 
 export default function Home() {
   return (
@@ -29,21 +38,24 @@ export default function Home() {
         <div className="relative z-20 -mt-20">
           <WhyChooseUs />
         </div>
-{/* Main Content with Gradient Background */}
-      <div className="relative bg-gradient-to-b from-amber-50 via-white to-rose-50">
-        <SaudiCities />
-        </div>
+        <HowWeHelp />
+        <IndustriesWeServe />
+        <SaudiEgyptLogistics />
         {/* Services Section with Background Pattern */}
         <div className="relative z-10">
           <div className="absolute inset-0 bg-gradient-to-r from-amber-100/20 to-rose-100/20"></div>
           <Services />
         </div>
+        <Stats  />
+        <Testimonials />
+        <ServiceShowcase />
 
         {/* Blog Section with Floating Effect */}
         <div className="relative z-20 -mt-16">
           <Blog />
         </div>
       </div>
+      <Partners />
 
       {/* Footer with Wave Pattern */}
       <div className="relative z-10">

@@ -1,43 +1,61 @@
 import './globals.css'
 import { Metadata } from 'next'
 import { Noto_Kufi_Arabic } from 'next/font/google'
+import Cursor from '@/components/Cursor'
 
 const notoKufiArabic = Noto_Kufi_Arabic({ subsets: ['arabic'] })
 
 export const metadata: Metadata = {
-  title: 'شركة النقل | خدمات شحن وتوصيل موثوقة في المملكة العربية السعودية',
-  description: 'شركة رائدة في مجال خدمات النقل والشحن في المملكة العربية السعودية. نقدم خدمات نقل بري، بحري وجوي مع ضمان الجودة والأمان',
-  keywords: 'نقل, شحن, لوجستيات, شحن بري, شحن بحري, شحن جوي, نقل بضائع, شركة نقل, السعودية, جدة',
-  authors: [{ name: 'شركة النقل' }],
-  creator: 'شركة النقل',
-  publisher: 'شركة النقل',
-  formatDetection: {
-    telephone: true,
-    email: true,
-    address: true,
+  title: {
+    default: 'شركة ترميز كود | تطوير وبرمجة المواقع والتطبيقات في المملكة العربية السعودية',
+    template: '%s | شركة ترميز كود'
+  },
+  description: 'شركة رائدة في مجال تطوير وبرمجة المواقع والتطبيقات. نقدم حلول تقنية متكاملة وخدمات برمجية احترافية مع ضمان الجودة',
+  keywords: [
+    'تطوير مواقع',
+    'برمجة تطبيقات',
+    'تصميم مواقع',
+    'تطوير تطبيقات',
+    'برمجة خاصة',
+    'تطوير متاجر إلكترونية',
+    'شركة برمجة',
+    'السعودية',
+    'جدة'
+  ],
+  authors: [{ name: 'شركة ترميز كود', url: 'https://www.tarmezcode.sa' }],
+  creator: 'شركة ترميز كود',
+  publisher: 'شركة ترميز كود',
+  metadataBase: new URL('https://www.tarmezcode.sa'),
+  alternates: {
+    canonical: '/',
+    languages: {
+      'ar-SA': '/',
+      'en-US': '/en'
+    }
   },
   openGraph: {
     type: 'website',
     locale: 'ar_SA',
-    url: 'https://www.transport-company.sa',
-    siteName: 'شركة النقل',
-    title: 'شركة النقل | خدمات شحن وتوصيل موثوقة',
-    description: 'خدمات نقل وشحن متكاملة في المملكة العربية السعودية',
+    url: 'https://www.tarmezcode.sa',
+    siteName: 'شركة ترميز كود',
+    title: 'شركة ترميز كود | تطوير وبرمجة المواقع والتطبيقات',
+    description: 'حلول تقنية متكاملة وخدمات برمجية احترافية في المملكة العربية السعودية',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'شركة النقل - خدمات الشحن المتكاملة',
-      },
-    ],
+        alt: 'شركة ترميز كود - حلول برمجية متكاملة',
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'شركة النقل | خدمات شحن وتوصيل موثوقة',
-    description: 'خدمات نقل وشحن متكاملة في المملكة العربية السعودية',
+    title: 'شركة ترميز كود | تطوير وبرمجة المواقع والتطبيقات',
+    description: 'حلول تقنية متكاملة وخدمات برمجية احترافية',
     images: ['/twitter-image.jpg'],
-    creator: '@TransportCompany',
+    creator: '@TarmezCode',
+    site: '@TarmezCode'
   },
   robots: {
     index: true,
@@ -48,19 +66,19 @@ export const metadata: Metadata = {
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
-    },
+    }
   },
   verification: {
-    google: 'verification_token',
-    yandex: 'verification_token',
+    google: 'verification-code',
+    yandex: 'verification-code',
   },
-  alternates: {
-    canonical: 'https://www.transport-company.sa',
-    languages: {
-      'ar-SA': 'https://www.transport-company.sa',
-      'en-US': 'https://www.transport-company.sa/en',
-    },
-  },
+  category: 'technology',
+  classification: 'web development and programming',
+  referrer: 'origin-when-cross-origin',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#00B272' }
+  ]
 }
 
 export default function RootLayout({
@@ -71,13 +89,16 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl">
       <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-        <meta name="theme-color" content="#ffffff" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.json" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
       </head>
-      <body className={notoKufiArabic.className}>{children}</body>
+      <body className={notoKufiArabic.className}>
+      <Cursor />
+
+        {children}</body>
     </html>
   )
 }
