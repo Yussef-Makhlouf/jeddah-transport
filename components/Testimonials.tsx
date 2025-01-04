@@ -65,13 +65,13 @@ export default function Testimonials() {
   ]
 
   return (
-    <section className="relative py-24 overflow-hidden bg-[#1a1a1a] ">
+    <section className="relative py-24 overflow-hidden bg-[#1a1a1a] dark:bg-gray-900">
       {/* Dynamic Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#003466]/90 to-[#00B272]/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#003466]/90 to-[#00B272]/90 dark:from-[#003466]/70 dark:to-[#00B272]/70"></div>
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-        <div className="absolute top-20 right-20 w-96 h-96 bg-[#00B272]/20 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-[#00A4D6]/20 rounded-full blur-3xl animate-pulse-slower"></div>
+        <div className="absolute top-20 right-20 w-96 h-96 bg-[#00B272]/20 dark:bg-[#00B272]/10 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-[#00A4D6]/20 dark:bg-[#00A4D6]/10 rounded-full blur-3xl animate-pulse-slower"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -84,7 +84,7 @@ export default function Testimonials() {
             </h2>
             <Star className="w-6 h-6 text-[#00B272]" />
           </div>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mt-4">
+          <p className="text-xl text-gray-300 dark:text-gray-400 max-w-3xl mx-auto mt-4">
             نفخر بثقة عملائنا وشهاداتهم التي تعكس جودة خدماتنا وتميز أعمالنا
           </p>
         </div>
@@ -94,14 +94,14 @@ export default function Testimonials() {
           {/* Navigation Buttons */}
           <button 
             onClick={() => scroll('left')}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/10 backdrop-blur-md p-3 rounded-full hover:bg-[#00B272] text-white transition-all"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/10 dark:bg-gray-700/30 backdrop-blur-md p-3 rounded-full hover:bg-[#00B272] text-white transition-all"
           >
             <ArrowLeft className="w-6 h-6" />
           </button>
-          
+      
           <button 
             onClick={() => scroll('right')}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/10 backdrop-blur-md p-3 rounded-full hover:bg-[#00B272] text-white transition-all"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/10 dark:bg-gray-700/30 backdrop-blur-md p-3 rounded-full hover:bg-[#00B272] text-white transition-all"
           >
             <ArrowRight className="w-6 h-6" />
           </button>
@@ -116,9 +116,9 @@ export default function Testimonials() {
                 key={testimonial.id}
                 className="min-w-[400px] snap-center"
               >
-                <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl relative group hover:bg-white/15 transition-all duration-300">
+                <div className="bg-white/10 dark:bg-gray-800/20 backdrop-blur-md p-8 rounded-2xl relative group hover:bg-white/15 dark:hover:bg-gray-700/30 transition-all duration-300">
                   <Quote className="absolute top-6 right-6 w-10 h-10 text-[#00B272]/20" />
-                  
+              
                   {/* Rating */}
                   <div className="flex gap-1 mb-6">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -127,9 +127,9 @@ export default function Testimonials() {
                   </div>
 
                   {/* Testimonial Text */}
-                  <p className="text-gray-300 mb-6 text-lg leading-relaxed">
+                  <div className="text-gray-300 dark:text-gray-400 mb-6 text-lg leading-relaxed">
                     {testimonial.text}
-                  </p>
+                  </div>
 
                   {/* Client Info */}
                   <div className="flex items-center gap-4">
@@ -143,7 +143,7 @@ export default function Testimonials() {
                     </div>
                     <div>
                       <h4 className="text-white font-bold">{testimonial.name}</h4>
-                      <p className="text-gray-400 text-sm">{testimonial.position}</p>
+                      <p className="text-gray-400 dark:text-gray-500 text-sm">{testimonial.position}</p>
                       <p className="text-[#00B272] text-sm">{testimonial.company}</p>
                     </div>
                   </div>
@@ -164,5 +164,6 @@ export default function Testimonials() {
         }
       `}</style>
     </section>
-  )
-}
+
+  );
+};

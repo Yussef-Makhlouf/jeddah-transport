@@ -4,7 +4,7 @@ import Footer from '@/components/Footer'
 import {  Calendar, Clock, User, Star } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import FAQ from '../components/FAQ'
+import FAQ from '@/components/FAQ'
 
 export default function Blog() {
   const blogPosts = [

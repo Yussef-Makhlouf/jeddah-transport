@@ -27,33 +27,33 @@ export default function Blog() {
 
   return (
     <section className="relative py-24 overflow-hidden">
-
       {/* Background Shapes */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-0 left-0 w-72 h-72 bg-[#00A4D6] rounded-full filter blur-3xl opacity-30 animate-blob"></div>
-        <div className="absolute bottom-0 right-0 w-72 h-72 bg-[#00B272] rounded-full filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-        </div>
-        {/* Dynamic Background */}
-<div className="absolute inset-0">
-  <div className="absolute inset-0 bg-gradient-to-br from-white via-[#f0f9ff] to-[#e6fffa]"></div>
-  <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-  <div className="absolute top-20 right-20 w-96 h-96 bg-[#00B272]/10 rounded-full blur-3xl animate-pulse-slow"></div>
-  <div className="absolute bottom-20 left-20 w-96 h-96 bg-[#00A4D6]/10 rounded-full blur-3xl animate-pulse-slower"></div>
-</div>
+        <div className="absolute top-0 left-0 w-72 h-72 bg-[#00A4D6] dark:bg-[#00A4D6]/20 rounded-full filter blur-3xl opacity-30 animate-blob"></div>
+        <div className="absolute bottom-0 right-0 w-72 h-72 bg-[#00B272] dark:bg-[#00B272]/20 rounded-full filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+      </div>
 
-{/* Floating Tech Icons */}
-<div className="absolute inset-0 overflow-hidden">
-  {[Terminal, Database, Cloud].map((Icon, index) => (
-    <div key={index} 
-         className={`absolute animate-float-${index + 1} opacity-30`}
-         style={{
-           top: `${Math.random() * 100}%`,
-           left: `${Math.random() * 100}%`
-         }}>
-      <Icon size={40} className="text-[#89C100]" />
-    </div>
-  ))}
-</div>
+      {/* Dynamic Background */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-white via-[#f0f9ff] to-[#e6fffa] dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"></div>
+        <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+        <div className="absolute top-20 right-20 w-96 h-96 bg-[#00B272]/10 dark:bg-[#00B272]/5 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-[#00A4D6]/10 dark:bg-[#00A4D6]/5 rounded-full blur-3xl animate-pulse-slower"></div>
+      </div>
+
+      {/* Floating Tech Icons */}
+      <div className="absolute inset-0 overflow-hidden">
+        {[Terminal, Database, Cloud].map((Icon, index) => (
+          <div key={index} 
+               className={`absolute animate-float-${index + 1} opacity-30`}
+               style={{
+                 top: `${Math.random() * 100}%`,
+                 left: `${Math.random() * 100}%`
+               }}>
+            <Icon size={40} className="text-[#89C100]" />
+          </div>
+        ))}
+      </div>
       {/* Wave SVG */}
       <div className="absolute top-0 left-0 w-full">
         <svg viewBox="0 0 1440 320" className="w-full h-auto">
@@ -85,7 +85,7 @@ export default function Blog() {
             </span>
           </h2>
           <div className="w-32 h-2 bg-gradient-to-r from-[#003466] via-[#00B272] to-[#89C100] mx-auto rounded-full mb-8"></div>
-          <p className="text-xl text-[#003466] max-w-3xl mx-auto">
+          <p className="text-xl text-[#003466] dark:text-gray-200 max-w-3xl mx-auto">
             نسعد بالإجابة على استفساراتكم وتقديم المساعدة المطلوبة
           </p>
         </div>
@@ -95,23 +95,23 @@ export default function Blog() {
           {contactMethods.map((method, index) => (
             <div
               key={index}
-              className="relative group bg-white/80 backdrop-blur-lg rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8"
+              className="relative group bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-[#00A4D6]/10 to-[#00B272]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#00A4D6]/10 to-[#00B272]/10 dark:from-[#00A4D6]/5 dark:to-[#00B272]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative flex flex-col items-center text-center">
                 <div className="bg-gradient-to-r from-[#003466] to-[#00B272] p-4 rounded-full mb-6 transform group-hover:scale-110 transition-transform duration-300">
                   <method.icon className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold mb-3 text-[#003466]">{method.title}</h3>
-                <p className="text-lg font-medium text-[#003466] mb-2">{method.detail}</p>
-                <p className="text-[#003466]/80">{method.description}</p>
+                <h3 className="text-2xl font-bold mb-3 text-[#003466] dark:text-white">{method.title}</h3>
+                <p className="text-lg font-medium text-[#003466] dark:text-gray-200 mb-2">{method.detail}</p>
+                <p className="text-[#003466]/80 dark:text-gray-400">{method.description}</p>
               </div>
             </div>
           ))}
         </div>
 
         {/* Contact Form */}
-<Contact />
+        <Contact />
       </div>
     </section>
   );

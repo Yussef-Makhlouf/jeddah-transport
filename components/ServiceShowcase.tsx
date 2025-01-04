@@ -94,6 +94,8 @@ export default function ServiceShowcase() {
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-white via-[#f0f9ff] to-[#e6fffa]"></div>
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-white via-[#f0f9ff] to-[#e6fffa] dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"></div>
+        <div className="absolute inset-0 bg-grid-pattern opacity-10 dark:opacity-5"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
