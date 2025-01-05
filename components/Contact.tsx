@@ -76,7 +76,7 @@ export default function Contact() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-gray-100">
             <span className="text-[#003466] dark:text-white">نسعد</span>{' '}
             <span className="text-[#00B272]">بتواصلك</span>{' '}
-            <span className="text-[#89C100]">معنا</span>
+            <span className="text-[#003466]">معنا</span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             نحن نسعد باتصالك وتسرنا مساعدتك، حتى وإن لم تكن عميل لدينا

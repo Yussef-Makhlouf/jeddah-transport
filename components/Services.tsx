@@ -61,7 +61,7 @@ export default function Services() {
       <h2 className="text-5xl font-bold mb-6">
         <span className="text-[#003466] dark:text-white">أحدث</span>{' '}
         <span className="text-[#00B272]">المقالات</span>{' '}
-        <span className="text-[#89C100]">والأخبار</span>
+        <span className="text-[#003466]">والأخبار</span>
       </h2>
     </div>
 
@@ -90,7 +90,7 @@ export default function Services() {
 
       <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400 mb-4">
         <div className="flex items-center gap-2">
-          <Clock className="w-4 h-4 text-[#89C100]" />
+          <Clock className="w-4 h-4 text-[#003466]" />
           <span>{post.readTime}</span>
         </div>
         <div className="flex items-center gap-2">
@@ -182,21 +182,21 @@ export default function Services() {
 //     <section className="relative py-32 overflow-hidden">
 //       {/* Background Elements */}
 //       <div className="absolute inset-0">
-//         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#003466]/10 via-[#00A4D6]/10 to-[#89C100]/10"></div>
+//         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#003466]/10 via-[#00A4D6]/10 to-[#003466]/10"></div>
 //         <div className="absolute top-24 left-12 w-96 h-96 bg-[#003466]/20 rounded-full blur-3xl animate-pulse-slow"></div>
 //         <div className="absolute bottom-12 right-12 w-96 h-96 bg-[#00B272]/20 rounded-full blur-3xl animate-pulse-slower"></div>
-//         <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-[#89C100]/20 rounded-full blur-3xl animate-pulse"></div>
+//         <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-[#003466]/20 rounded-full blur-3xl animate-pulse"></div>
 //       </div>
 
 //       {/* Header Section */}
 //       <div className="container mx-auto px-4 relative">
 //         <div className="text-center mb-24">
 //           <h2 className="relative text-6xl font-bold mb-6">
-//             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#003466] via-[#00B272] to-[#89C100]">
+//             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#003466] via-[#00B272] to-[#003466]">
 //               مدونتنا
 //             </span>
 //           </h2>
-//           <div className="w-32 h-2 bg-gradient-to-r from-[#003466] via-[#00A4D6] to-[#89C100] mx-auto rounded-full mb-8"></div>
+//           <div className="w-32 h-2 bg-gradient-to-r from-[#003466] via-[#00A4D6] to-[#003466] mx-auto rounded-full mb-8"></div>
 //           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
 //             استكشف أحدث المقالات والنصائح في عالم التقنية والبرمجة.
 //           </p>
@@ -227,7 +227,7 @@ export default function Services() {
 //               <ul className="space-y-3">
 //                 {blog.features.map((feature, idx) => (
 //                   <li key={idx} className="flex items-center gap-3 text-gray-700">
-//                     <div className="bg-gradient-to-r from-[#003466] to-[#89C100] rounded-full p-1">
+//                     <div className="bg-gradient-to-r from-[#003466] to-[#003466] rounded-full p-1">
 //                       <CheckCircle className="h-4 w-4 text-white" />
 //                     </div>
 //                     <span>{feature}</span>
@@ -235,7 +235,7 @@ export default function Services() {
 //                 ))}
 //               </ul>
 
-//               <button className="mt-6 w-full bg-gradient-to-r from-[#003466] to-[#89C100] text-white py-3 rounded-xl font-medium hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 group-hover:scale-105">
+//               <button className="mt-6 w-full bg-gradient-to-r from-[#003466] to-[#003466] text-white py-3 rounded-xl font-medium hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 group-hover:scale-105">
 //                 اقرأ المزيد
 //                 <ArrowRight className="h-5 w-5" />
 //               </button>

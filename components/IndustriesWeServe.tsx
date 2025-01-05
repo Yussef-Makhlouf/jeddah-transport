@@ -17,7 +17,7 @@ export default function IndustriesWeServe() {
           description: "حلول رقمية متخصصة لقطاع المطاعم والمقاهي",
           projects: ["أنظمة نقاط البيع", "إدارة المخزون", "تطبيقات توصيل الطعام"],
           image: "/logo (1).jpg",
-          color: "bg-[#89C100]"
+          color: "bg-[#003466]"
         },
         {
           icon: CreditCard,
@@ -49,7 +49,7 @@ export default function IndustriesWeServe() {
           description: "حلول مصرفية رقمية آمنة وموثوقة",
           projects: ["الخدمات المصرفية عبر الإنترنت", "تطبيقات الجوال", "أنظمة الأمان المصرفي"],
           image: "/logo (1).jpg",
-          color: "bg-[#89C100]"
+          color: "bg-[#003466]"
         },
         {
           icon: Share2,
@@ -94,10 +94,10 @@ export default function IndustriesWeServe() {
           </div>
           <h2 className="text-6xl font-bold mb-6">
             <span className="text-[#003466] dark:text-[#4d9fff]">نبني</span>{' '}
-            <span className="text-[#89C100] dark:text-[#a3e600]">حلول</span>{' '}
+            <span className="text-[#003466] dark:text-[#a3e600]">حلول</span>{' '}
             <span className="text-[#00B272] dark:text-[#00ffaa]">لكل صناعة</span>
           </h2>
-          <div className="w-32 h-1 bg-gradient-to-r from-[#00B272] via-[#89C100] to-[#00A4D6] dark:from-[#00ffaa] dark:via-[#a3e600] dark:to-[#4dc4ff] mx-auto rounded-full mb-8"></div>
+          <div className="w-32 h-1 bg-gradient-to-r from-[#00B272] via-[#003466] to-[#00A4D6] dark:from-[#00ffaa] dark:via-[#a3e600] dark:to-[#4dc4ff] mx-auto rounded-full mb-8"></div>
         </div>
 
         {/* Interactive Industry Showcase */}

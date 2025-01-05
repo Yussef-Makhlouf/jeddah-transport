@@ -20,7 +20,7 @@ export default function HowWeHelp() {
             
             <h2 className="text-5xl font-bold leading-tight">
               <span className="text-white">نصنع</span>{' '}
-              <span className="text-[#89C100]">الفرق</span>{' '}
+              <span className="text-[#003466]">الفرق</span>{' '}
               <span className="text-[#00B272]">معاً</span>
             </h2>
 
@@ -36,7 +36,7 @@ export default function HowWeHelp() {
               <div className="space-y-8">
                 {[
                   { icon: Lightbulb, text: "نبتكر حلولاً رقمية متقدمة", color: "bg-[#00B272]" },
-                  { icon: Target, text: "نحقق أهداف عملائنا باحترافية", color: "bg-[#89C100]" },
+                  { icon: Target, text: "نحقق أهداف عملائنا باحترافية", color: "bg-[#003466]" },
                   { icon: Rocket, text: "نطور تجارب مستخدم استثنائية", color: "bg-[#00A4D6]" }
                 ].map((step, index) => (
                   <div 
@@ -52,7 +52,7 @@ export default function HowWeHelp() {
               </div>
 
               {/* Decorative Elements */}
-              <div className="absolute -right-4 top-0 bottom-0 w-1 bg-gradient-to-b from-[#00B272] via-[#89C100] to-[#00A4D6]"></div>
+              <div className="absolute -right-4 top-0 bottom-0 w-1 bg-gradient-to-b from-[#00B272] via-[#003466] to-[#00A4D6]"></div>
             </div>
           </div>
         </div>

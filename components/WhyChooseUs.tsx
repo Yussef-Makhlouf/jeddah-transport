@@ -22,7 +22,7 @@ export default function WhyChooseUs() {
         'خوادم عالية الأداء',
         'حماية وأمان متكامل'
       ],
-      color: 'bg-[#89C100]'
+      color: 'bg-[#003466]'
     },
     {
       icon: Rocket,
@@ -48,7 +48,7 @@ const companyGoals = [
     title: "نطور",
     description: "نطور تقنيات مبتكرة تواكب التطور التكنولوجي",
     icon: Cpu,
-    color: "bg-[#89C100]",
+    color: "bg-[#003466]",
     bgPattern: "bg-dots-pattern"
   },
   {
@@ -78,10 +78,10 @@ const companyGoals = [
           </div>
           <h2 className="text-6xl font-bold mb-6">
             <span className="text-[#003466] dark:text-[#4d9fff]">نطور</span>{' '}
-            <span className="text-[#89C100] dark:text-[#a3e600]">حلول</span>{' '}
+            <span className="text-[#003466] dark:text-[#a3e600]">حلول</span>{' '}
             <span className="text-[#00B272] dark:text-[#00ffaa]">المستقبل</span>
           </h2>
-          <div className="w-32 h-1 bg-gradient-to-r from-[#00B272] via-[#89C100] to-[#00A4D6] dark:from-[#00ffaa] dark:via-[#a3e600] dark:to-[#4dc4ff] mx-auto rounded-full mb-8"></div>
+          <div className="w-32 h-1 bg-gradient-to-r from-[#00B272] via-[#003466] to-[#00A4D6] dark:from-[#00ffaa] dark:via-[#a3e600] dark:to-[#4dc4ff] mx-auto rounded-full mb-8"></div>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             نقدم حلول برمجية متكاملة تجمع بين الخبرة والكفاءة والتقنيات الحديثة
           </p>
@@ -118,11 +118,11 @@ const companyGoals = [
           <div className="container mx-auto px-4">
             <div className="flex flex-col items-center text-center mb-16">
               <h3 className="text-5xl font-bold text-[#003466] dark:text-[#4d9fff] mb-6">رحلتنا نحو النجاح</h3>
-              <div className="w-24 h-1 bg-gradient-to-r from-[#00B272] via-[#89C100] to-[#00A4D6] dark:from-[#00ffaa] dark:via-[#a3e600] dark:to-[#4dc4ff] rounded-full"></div>
+              <div className="w-24 h-1 bg-gradient-to-r from-[#00B272] via-[#003466] to-[#00A4D6] dark:from-[#00ffaa] dark:via-[#a3e600] dark:to-[#4dc4ff] rounded-full"></div>
             </div>
 
             <div className="relative">
-              <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-[#00B272] via-[#89C100] to-[#00A4D6] dark:from-[#00ffaa] dark:via-[#a3e600] dark:to-[#4dc4ff] transform -translate-x-1/2"></div>
+              <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-[#00B272] via-[#003466] to-[#00A4D6] dark:from-[#00ffaa] dark:via-[#a3e600] dark:to-[#4dc4ff] transform -translate-x-1/2"></div>
 
               {companyGoals.map((goal, index) => (
                 <div 

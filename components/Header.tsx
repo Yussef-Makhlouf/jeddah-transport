@@ -19,7 +19,7 @@ import { useTheme } from "next-themes";
 // import Image from 'next/image'
 import { cn } from "@/lib/utils";
 import { AnimatePresence } from "framer-motion";
-import { motion } from "framer-motion";``
+import { motion } from "framer-motion";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -45,13 +45,13 @@ export default function Header() {
         icon: Package,
         color: "text-[#00B272]",
       },
-      { name: "تطوير المواقع المخصصة", icon: Code, color: "text-[#89C100]" },
+      { name: "تطوير المواقع المخصصة", icon: Code, color: "text-[#003466]" },
       { name: "تطوير تطبيقات الجوال", icon: Terminal, color: "text-[#00A4D6]" },
       { name: "تطوير أنظمة ال ERP", icon: Database, color: "text-[#003466]" },
     ],
     "خدمات التصميم": [
       { name: "تصميم الهوية التجارية", icon: Code, color: "text-[#00B272]" },
-      { name: "تصميم الموشن جرافيك", icon: Code, color: "text-[#89C100]" },
+      { name: "تصميم الموشن جرافيك", icon: Code, color: "text-[#003466]" },
     ],
     "خدمات التسويق": [
       { name: "التسويق الرقمي", icon: Cloud, color: "text-[#00A4D6]" },
@@ -254,7 +254,7 @@ export default function Header() {
             <Link
               href="tel:+20123456789"
               className={cn(
-                "bg-[#00B272] hover:bg-[#89C100] text-white",
+                "bg-[#00B272] hover:bg-[#003466] text-white",
                 "px-6 py-2.5 rounded-xl font-medium",
                 "transition-all duration-300 shadow-lg hover:shadow-xl",
                 "flex items-center gap-2 group"
@@ -366,7 +366,7 @@ export default function Header() {
 
                 <Link
                   href="tel:+20123456789"
-                  className="bg-[#00B272] hover:bg-[#89C100] text-white px-6 py-3 rounded-xl font-medium transition-colors flex items-center gap-2"
+                  className="bg-[#00B272] hover:bg-[#003466] text-white px-6 py-3 rounded-xl font-medium transition-colors flex items-center gap-2"
                 >
                   <Phone className="w-5 h-5" />
                   <span>اتصل بنا</span>

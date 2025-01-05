@@ -50,7 +50,7 @@ export default function Blog() {
                  top: `${Math.random() * 100}%`,
                  left: `${Math.random() * 100}%`
                }}>
-            <Icon size={40} className="text-[#89C100]" />
+            <Icon size={40} className="text-[#003466]" />
           </div>
         ))}
       </div>
@@ -80,11 +80,11 @@ export default function Blog() {
         {/* Header */}
         <div className="text-center mb-20">
           <h2 className="text-6xl font-bold mb-6">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#003466] via-[#00B272] to-[#89C100]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#003466] via-[#00B272] to-[#003466]">
               تواصل معنا
             </span>
           </h2>
-          <div className="w-32 h-2 bg-gradient-to-r from-[#003466] via-[#00B272] to-[#89C100] mx-auto rounded-full mb-8"></div>
+          <div className="w-32 h-2 bg-gradient-to-r from-[#003466] via-[#00B272] to-[#003466] mx-auto rounded-full mb-8"></div>
           <p className="text-xl text-[#003466] dark:text-gray-200 max-w-3xl mx-auto">
             نسعد بالإجابة على استفساراتكم وتقديم المساعدة المطلوبة
           </p>

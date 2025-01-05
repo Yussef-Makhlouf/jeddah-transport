@@ -15,6 +15,7 @@ import Stats from "@/components/Stats"
 import Testimonials from "@/components/Testimonials"
 import WhyChooseUs from "@/components/WhyChooseUs"
 import ServiceShowcase from "@/components/ServiceShowcase"
+import FAQ from '@/components/FAQ'
 
 export default function Home() {
   return (
@@ -51,7 +52,7 @@ export default function Home() {
       </div>
     </div>
     <Partners />
-
+<FAQ />
     <div className="relative z-10">
       <Footer />
     </div>

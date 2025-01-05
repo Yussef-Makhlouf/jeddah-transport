@@ -4,7 +4,7 @@ import Image from 'next/image'
 export default function AboutUs() {
   const achievements = [
     { icon: Trophy, title: "خبرة برمجية", value: "+3", suffix: "عام", color: "bg-[#00B272]" },
-    { icon: Code, title: "مشروع ناجح", value: "+22500", suffix: "مشروع", color: "bg-[#89C100]" },
+    { icon: Code, title: "مشروع ناجح", value: "+22500", suffix: "مشروع", color: "bg-[#003466]" },
     { icon: Users, title: "عميل سعيد", value: "+3500", suffix: "عميل", color: "bg-[#00A4D6]" },
     { icon: Rocket, title: "تقنية حديثة", value: "+50", suffix: "تقنية", color: "bg-[#003466]" }
   ]
@@ -20,7 +20,7 @@ export default function AboutUs() {
       icon: Globe,
       title: "حلول عالمية",
       description: "نقدم خدماتنا للشركات في جميع أنحاء العالم بمعايير دولية",
-      color: "bg-[#89C100]"
+      color: "bg-[#003466]"
     },
     {
       icon: Shield,
@@ -56,10 +56,10 @@ export default function AboutUs() {
               </span>
               <h2 className="text-6xl font-bold mb-6">
                 <span className="text-[#003466] dark:text-[#4d9fff]">نطور</span>{' '}
-                <span className="text-[#89C100] dark:text-[#a3e600]">مستقبلك</span>{' '}
+                <span className="text-[#003466] dark:text-[#a3e600]">مستقبلك</span>{' '}
                 <span className="text-[#00B272] dark:text-[#00ffaa]">الرقمي</span>
               </h2>
-              <div className="w-32 h-1 bg-gradient-to-r from-[#00B272] via-[#89C100] to-[#00A4D6] dark:from-[#00ffaa] dark:via-[#a3e600] dark:to-[#4dc4ff] mx-auto rounded-full"></div>
+              <div className="w-32 h-1 bg-gradient-to-r from-[#00B272] via-[#003466] to-[#00A4D6] dark:from-[#00ffaa] dark:via-[#a3e600] dark:to-[#4dc4ff] mx-auto rounded-full"></div>
             </div>
           </div>
 

@@ -19,7 +19,7 @@ export default function ContactPage() {
         {/* Additional Decorative Elements */}
         <div className="absolute top-1/3 left-1/4 w-32 h-32 border-4 border-[#00B272]/20 dark:border-[#00B272]/10 rounded-full animate-spin-slow"></div>
         <div className="absolute bottom-1/4 right-1/3 w-24 h-24 bg-[#00A4D6]/10 dark:bg-[#00A4D6]/5 rotate-45"></div>
-        <div className="absolute top-1/2 right-1/4 w-16 h-16 border-2 border-[#89C100]/30 dark:border-[#89C100]/20 rounded-lg animate-bounce-slow"></div>
+        <div className="absolute top-1/2 right-1/4 w-16 h-16 border-2 border-[#003466]/30 dark:border-[#003466]/20 rounded-lg animate-bounce-slow"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -29,7 +29,7 @@ export default function ContactPage() {
             👋 نسعد بتواصلكم
           </span>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-900 dark:text-gray-100">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#003466] via-[#00B272] to-[#89C100]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#003466] via-[#00B272] to-[#003466]">
               تواصل معنا
             </span>
           </h1>
@@ -47,7 +47,7 @@ export default function ContactPage() {
               icon: Code,
               title: "خدمة متميزة",
               description: "نقدم خدمة عملاء متميزة على مدار الساعة",
-              color: "from-[#00B272] to-[#89C100]"
+              color: "from-[#00B272] to-[#003466]"
             },
             {
               icon: Globe,

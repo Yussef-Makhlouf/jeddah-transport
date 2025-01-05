@@ -18,7 +18,7 @@ const stats = [
     suffix: '%',
     title: 'نسبة النمو',
     description: 'معدل نمو سنوي',
-    gradient: 'from-[#00B272] to-[#89C100]'
+    gradient: 'from-[#00B272] to-[#003466]'
   },
   {
     icon: Award,
@@ -34,7 +34,7 @@ const stats = [
     suffix: '+',
     title: ' مواد برمجية و إعلانية منفذة',
     description: 'حول العالم',
-    gradient: 'from-[#89C100] to-[#00B272]'
+    gradient: 'from-[#003466] to-[#00B272]'
   },
   
 ];
@@ -52,7 +52,7 @@ export default function Stats() {
             style={{
               background: `radial-gradient(circle, ${[
                 '#00B272',
-                '#89C100',
+                '#003466',
                 '#00A4D6'
               ][i]}15, transparent 70%)`,
               top: `${[20, 60, 40][i]}%`,
@@ -102,7 +102,7 @@ export default function Stats() {
             <div>
               <h4 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-2">معدل نمو سنوي</h4>
               <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
-                <div className="h-full w-[85%] bg-gradient-to-r from-[#00B272] to-[#89C100] rounded-full" />
+                <div className="h-full w-[85%] bg-gradient-to-r from-[#00B272] to-[#003466] rounded-full" />
               </div>
             </div>
           </div>

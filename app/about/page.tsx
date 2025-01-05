@@ -2,7 +2,9 @@ import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Partners from "@/components/Partners";
+import SaudiMap from "@/components/SaudiMap";
 import ServiceShowcase from "@/components/ServiceShowcase";
+import TarmezTimeline from "@/components/TarmezTimeline";
 import { Code, Palette, Database, Globe, Rocket, Terminal, Users, Sparkles, Cloud } from 'lucide-react'
 import Image from 'next/image'
 export default function About() {
@@ -21,14 +23,14 @@ export default function About() {
           {/* Decorative Elements */}
           <div className="absolute top-1/3 left-1/4 w-24 md:w-32 h-24 md:h-32 border-4 border-[#00B272]/20 dark:border-[#00B272]/10 rounded-full animate-spin-slow"></div>
           <div className="absolute bottom-1/4 right-1/3 w-20 md:w-24 h-20 md:h-24 bg-[#00A4D6]/10 dark:bg-[#00A4D6]/5 rotate-45"></div>
-          <div className="absolute top-1/2 right-1/4 w-12 md:w-16 h-12 md:h-16 border-2 border-[#89C100]/30 dark:border-[#89C100]/20 rounded-lg animate-bounce-slow"></div>
+          <div className="absolute top-1/2 right-1/4 w-12 md:w-16 h-12 md:h-16 border-2 border-[#003466]/30 dark:border-[#003466]/20 rounded-lg animate-bounce-slow"></div>
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Company Introduction */}
           <div className="text-center mb-16 md:mb-24">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#003466] via-[#00B272] to-[#89C100]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#003466] via-[#00B272] to-[#003466]">
                 ترميز تك - نقود مستقبل التقنية
               </span>
             </h1>
@@ -122,12 +124,12 @@ export default function About() {
         </div>
 
         {/* <OfficeLocations /> */}
-
+<TarmezTimeline />
         {/* FAQ Section */}
         <div className="relative bg-gradient-to-b from-amber-50 via-white to-rose-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-16 md:py-24">
           <FAQ/>
         </div>
-
+<SaudiMap />
         <Partners />
         <Footer />
       </section>

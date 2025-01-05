@@ -1,9 +1,13 @@
 'use client'
-import { motion } from 'framer-motion'
-import { ShoppingBag, Globe, Smartphone, Database, Search, Palette, Play, Megaphone, Share2, Cloud, Server } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { ShoppingBag, Globe, Smartphone, Database, Search, Palette, Play, Megaphone, Share2, Cloud, Server, Code2, ArrowRight } from 'lucide-react'
 import Image from 'next/image'
+import { useState } from 'react'
 
 export default function ServiceShowcase() {
+  const [activeTab, setActiveTab] = useState(0)
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null)
+
   const services = [
     {
       icon: ShoppingBag,
@@ -11,7 +15,7 @@ export default function ServiceShowcase() {
       description: "نُنشئ متاجر إلكترونية احترافية تُقدم تجربة تسوق مميزة",
       image: "/logo (1).jpg",
       technologies: ["Shopify", "WooCommerce", "Magento"],
-      color: "from-[#00B272] to-[#89C100]"
+      color: "from-[#00B272] to-[#003466]"
     },
     {
       icon: Globe,
@@ -35,7 +39,7 @@ export default function ServiceShowcase() {
       description: "نُنشئ نظامات بيانات مُخصصة تلبي احتياجاتك وأهدافك",
       image: "/logo (1).jpg",
       technologies: ["MySQL", "PostgreSQL", "MongoDB"],
-        color: "from-[#89C100] to-[#003466]"
+        color: "from-[#003466] to-[#003466]"
     },
     {
       icon: Search,
@@ -86,84 +90,147 @@ export default function ServiceShowcase() {
       image: "/logo (1).jpg",
       technologies: ["WordPress", "Joomla", "Drupal"],
     },
+  ]
 
+  const serviceTabs = [
+    {
+      title: "تطوير البرمجيات",
+      icon: Code2,
+      services: [services[0], services[1], services[2], services[3]]
+    },
+    {
+      title: "التصميم والهوية",
+      icon: Palette,
+      services: [services[4], services[5], services[6], services[7]]
+    },
+    {
+      title: "الحلول السحابية",
+      icon: Cloud,
+      services: [services[8], services[9], services[10]]
+    }
   ]
 
   return (
     <section className="relative py-24 overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-white via-[#f0f9ff] to-[#e6fffa]"></div>
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-white via-[#f0f9ff] to-[#e6fffa] dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"></div>
         <div className="absolute inset-0 bg-grid-pattern opacity-10 dark:opacity-5"></div>
       </div>
-
+      
       <div className="container mx-auto px-4 relative z-10">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <span className="inline-block px-6 py-3 bg-white/80 backdrop-blur-md rounded-full text-[#00B272] mb-6 shadow-lg">
-            🚀 خدماتنا المتكاملة
-          </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            <span className="text-[#003466]">حلول</span>{' '}
-            <span className="text-[#00B272]">رقمية</span>{' '}
-            <span className="text-[#89C100]">شاملة</span>
+        <motion.div className="text-center mb-20">
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="px-8 py-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-full text-[#00B272] dark:text-[#00ffaa] font-bold inline-block mb-8 shadow-lg"
+          >
+            🚀 اكتشف خدماتنا المتكاملة
+          </motion.span>
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8">
+            <span className="text-[#003466] dark:text-[#4d9fff]">حلول</span>{' '}
+            <span className="text-[#00B272] dark:text-[#00ffaa]">رقمية</span>{' '}
+            <span className="text-[#003466] dark:text-[#4d9fff]">شاملة</span>
           </h2>
         </motion.div>
 
-        <div className="relative">
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10"></div>
-          
-          <div className="overflow-x-auto hide-scrollbar">
-            <div className="flex gap-6 pb-8 min-w-max">
-              {services.map((service, index) => (
-                <motion.div
+        {/* Enhanced Tabs Navigation */}
+        <div className="flex justify-center mb-16">
+          <div className="p-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-2xl shadow-xl">
+            <div className="flex flex-wrap justify-center gap-4">
+              {serviceTabs.map((tab, index) => (
+                <motion.button
                   key={index}
-                  initial={{ opacity: 0, x: 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="w-[300px] bg-white/80 backdrop-blur-md rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300"
+                  onClick={() => setActiveTab(index)}
+                  className={`
+                    flex items-center gap-3 px-8 py-4 rounded-xl transition-all duration-300
+                    ${activeTab === index 
+                      ? 'bg-gradient-to-r from-[#00B272] to-[#003466] text-white shadow-lg scale-105'
+                      : 'text-[#003466] dark:text-[#4d9fff] hover:bg-[#00B272]/10 dark:hover:bg-[#00ffaa]/10'
+                    }
+                  `}
+                  whileHover={{ scale: activeTab === index ? 1.05 : 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  <div className="relative h-40 rounded-t-2xl overflow-hidden">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      className="object-cover"
-                    />
-                    <div className={`absolute inset-0 bg-gradient-to-t ${service.color} opacity-60`}></div>
-                  </div>
-
-                  <div className="p-6">
-                    <div className={`bg-gradient-to-r ${service.color} w-14 h-14 rounded-xl flex items-center justify-center -mt-12 mb-4 shadow-lg`}>
-                      <service.icon className="h-7 w-7 text-white" />
-                    </div>
-
-                    <h3 className="text-xl font-bold text-[#003466] mb-3">{service.title}</h3>
-                    <p className="text-gray-600 text-sm mb-4">{service.description}</p>
-
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {service.technologies.map((tech, idx) => (
-                        <span key={idx} className="px-2 py-1 bg-gray-100 rounded-full text-xs text-gray-600">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-
-                    <button className="w-full py-2 rounded-xl bg-gradient-to-r from-[#003466] to-[#00B272] text-white text-sm font-medium hover:opacity-90 transition-opacity">
-                      احصل على الخدمة
-                    </button>
-                  </div>
-                </motion.div>
+                  <tab.icon className="w-6 h-6" />
+                  <span className="font-bold text-lg">{tab.title}</span>
+                </motion.button>
               ))}
             </div>
           </div>
         </div>
+
+        {/* Enhanced Services Grid */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            {serviceTabs[activeTab].services.map((service, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: index * 0.1 }}
+                onHoverStart={() => setHoveredCard(index)}
+                onHoverEnd={() => setHoveredCard(null)}
+                className="group relative bg-white/90 dark:bg-gray-800/90 backdrop-blur-md rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover transform group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-t ${service.color} opacity-60 group-hover:opacity-70 transition-opacity`}></div>
+                </div>
+
+                <div className="p-8">
+                  <div className={`bg-gradient-to-r ${service.color} w-16 h-16 rounded-xl flex items-center justify-center -mt-16 mb-6 shadow-lg transform group-hover:scale-110 transition-transform`}>
+                    <service.icon className="h-8 w-8 text-white" />
+                  </div>
+
+                  <h3 className="text-2xl font-bold text-[#003466] dark:text-[#4d9fff] mb-4">{service.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-6">{service.description}</p>
+
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {service.technologies.map((tech, idx) => (
+                      <span 
+                        key={idx} 
+                        className="px-3 py-1.5 bg-[#003466]/5 dark:bg-[#4d9fff]/10 rounded-full text-sm font-medium text-[#003466] dark:text-[#4d9fff]"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <motion.button 
+                    className="w-full py-3 rounded-xl bg-gradient-to-r from-[#003466] to-[#00B272] text-white font-bold text-lg hover:opacity-90 transition-all flex items-center justify-center gap-2 group/btn"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <span>احصل على الخدمة</span>
+                    <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+                  </motion.button>
+                </div>
+
+                {hoveredCard === index && (
+                  <motion.div 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="absolute top-4 right-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-md rounded-full px-4 py-2 shadow-lg"
+                  >
+                    <span className="text-[#00B272] dark:text-[#00ffaa] font-bold">خدمة متميزة</span>
+                  </motion.div>
+                )}
+              </motion.div>
+            ))}
+          </motion.div>
+        </AnimatePresence>
       </div>
     </section>
   )

@@ -23,7 +23,7 @@
           { name: "متجر المنتجات الصحية", image: "/logo (1).jpg" }
         ],
         techStack: ["React", "Node.js", "MongoDB", "AWS"],
-        color: "from-[#00B272] to-[#89C100]"
+        color: "from-[#00B272] to-[#003466]"
       },
       {
         icon: Smartphone,
@@ -110,10 +110,10 @@
             </span>
             <h2 className="text-6xl font-bold mb-6">
               <span className="text-white">نبتكر</span>{' '}
-              <span className="text-[#89C100]">حلول</span>{' '}
+              <span className="text-[#ffff]">حلول</span>{' '}
               <span className="text-[#00B272]">رقمية</span>
             </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-[#00B272] via-[#89C100] to-[#00A4D6] mx-auto rounded-full"></div>
+            <div className="w-32 h-1 bg-gradient-to-r from-[#00B272] via-[#003466] to-[#00A4D6] mx-auto rounded-full"></div>
           </motion.div>
 
           <div className="space-y-32">
@@ -164,31 +164,36 @@
                     </div>
 
                     {/* Projects Showcase */}
-                    <div className="space-y-6">
-                      <h4 className="text-2xl font-bold text-white mb-6">مشاريع مميزة</h4>
-                      <div className="grid grid-cols-1 gap-6">
-                        {service.projects.map((project, idx) => (
-                          <div key={idx} className="group/project relative overflow-hidden rounded-2xl">
-                            <Image
-                              src={project.image}
-                              alt={project.name}
-                              width={600}
-                              height={300}
-                              className="object-cover w-full h-48 group-hover/project:scale-110 transition-transform duration-500"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
-                              <div className="p-6">
-                                <h5 className="text-xl font-bold text-white mb-2">{project.name}</h5>
-                                <button className="flex items-center gap-2 text-[#00B272] font-medium group-hover/project:text-white transition-colors">
-                                  <span>عرض التفاصيل</span>
-                                  <ArrowRight className="w-5 h-5 group-hover/project:translate-x-1 transition-transform" />
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+{/* Projects Showcase */}
+<div className="space-y-6">
+  <h4 className="text-2xl font-bold text-white mb-8">مشاريع مميزة</h4>
+  <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+    {service.projects.map((project, idx) => (
+      <motion.div
+        key={idx}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: idx * 0.2 }}
+        className="group/project relative aspect-square overflow-hidden rounded-2xl"
+      >
+        <Image
+          src={project.image}
+          alt={project.name}
+          fill
+          className="object-cover transform group-hover/project:scale-110 transition-transform duration-500"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#003466]/90 to-transparent opacity-0 group-hover/project:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+          <h5 className="text-lg md:text-xl font-bold text-white mb-2">{project.name}</h5>
+          <button className="flex items-center gap-2 text-[#00B272] font-medium group-hover/project:text-white transition-colors">
+            <span>عرض التفاصيل</span>
+            <ArrowRight className="w-5 h-5 group-hover/project:translate-x-1 transition-transform" />
+          </button>
+        </div>
+      </motion.div>
+    ))}
+  </div>
+</div>
+
                   </div>
                 </div>
               </motion.div>
@@ -199,7 +204,7 @@
           <div className="text-center mt-24">
             <motion.button
               whileHover={{ scale: 1.05 }}
-              className="bg-gradient-to-r from-[#00B272] to-[#89C100] text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-gradient-to-r from-[#00B272] to-[#003466] text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
             >
               تواصل معنا لبدء مشروعك
             </motion.button>
